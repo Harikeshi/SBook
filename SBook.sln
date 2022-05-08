@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C5076C8-6758-4A7D-A1BC-DD72256C6A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBook.logic", "SBook.logic\SBook.logic.csproj", "{946421DE-B6A7-4470-BBF3-4393E38C791D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBook.Wpf", "SBook.Wpf\SBook.Wpf.csproj", "{26E9E88F-9714-4433-B957-9429A62081DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{946421DE-B6A7-4470-BBF3-4393E38C791D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946421DE-B6A7-4470-BBF3-4393E38C791D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946421DE-B6A7-4470-BBF3-4393E38C791D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946421DE-B6A7-4470-BBF3-4393E38C791D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E9E88F-9714-4433-B957-9429A62081DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E9E88F-9714-4433-B957-9429A62081DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E9E88F-9714-4433-B957-9429A62081DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E9E88F-9714-4433-B957-9429A62081DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{946421DE-B6A7-4470-BBF3-4393E38C791D} = {9C5076C8-6758-4A7D-A1BC-DD72256C6A37}
+		{26E9E88F-9714-4433-B957-9429A62081DC} = {9C5076C8-6758-4A7D-A1BC-DD72256C6A37}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D06F3769-019C-4F62-9593-BA805DD27A19}
+	EndGlobalSection
+EndGlobal
