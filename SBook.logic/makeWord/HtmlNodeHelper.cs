@@ -42,7 +42,7 @@ namespace SBook.logic.makeWord
         {
             List<Audio>? lst = this.GetAudios();
 
-            try
+            if (lst != null)
             {
                 word.AudioUK = lst[0].Name;
                 word.AudioUKpath = lst[0].Path;
@@ -53,13 +53,14 @@ namespace SBook.logic.makeWord
                 }
                 catch
                 {
-                    Console.WriteLine("Audio US missed.");
+                    SBook.logic.models.Logger.Add("*** Missing US Audio File " + word.Name + ".\n");
                 }
             }
-            catch
+            else
             {
-                Console.WriteLine("Audio UK missed.");
+                SBook.logic.models.Logger.Add("*** Missing Audio files " + word.Name + ".\n");
             }
+
         }
 
         private string GetName() => this.GetString(this.Spans, "hw dhw");
@@ -154,8 +155,18 @@ namespace SBook.logic.makeWord
         }
         private List<HtmlNode>? GetAudioNodes()
         {
-            return this.Document.DocumentNode.SelectNodes("//source")
-                    .Where(n => n.Attributes["type"].Value == "audio/mpeg").ToList();
+            List<HtmlNode> lst;
+
+            try
+            {
+                lst = this.Document.DocumentNode.SelectNodes("//source")
+                        .Where(n => n.Attributes["type"].Value == "audio/mpeg").ToList();
+            }
+            catch
+            {
+                return null;
+            }
+            return lst;
         }
         private static string GetAudioName(string str)
         {
@@ -255,6 +266,5 @@ namespace SBook.logic.makeWord
             }
             return irregular;
         }
-
     }
 }

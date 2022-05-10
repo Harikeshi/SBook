@@ -13,9 +13,9 @@ namespace SBook.logic.prepPdf
 
         char[] separaters = { '\n', '\t', '\r', ',', ' ', ':', '\"', ';', '.', '!', '?' };
 
-        public WordsListCreator(string path)
+        public WordsListCreator(string txt)
         {
-            this.raw = new RawText(path).Content;
+            this.raw = txt;
             this.words = new Dictionary<string, int>();
 
             this.CreateDictionary();

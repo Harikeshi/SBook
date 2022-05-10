@@ -9,6 +9,7 @@ namespace SBook.logic.models
     public class Word
     {
         // Класс для создания и хранения хранения слова 
+        public string findName { get; set; }
         public string Name { get; set; }
         public string Part { get; set; }
         public string Pron { get; set; }
@@ -20,7 +21,8 @@ namespace SBook.logic.models
         public Dictionary<string, string> Irregular;
         public Word(string name)
         {
-            this.Name = name;
+            this.findName = name;
+            this.Name = String.Empty;
             this.Part = String.Empty;
             this.Pron = String.Empty;
             this.AudioUK = String.Empty;
