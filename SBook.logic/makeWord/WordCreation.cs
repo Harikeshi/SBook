@@ -31,19 +31,27 @@ namespace SBook.logic.makeWord
 
             if (nodes.Count == 0)
             {
+                SBook.logic.models.Logger.Add("** Missing English word abstract [" + name + "].\n");
                 html = this.hd.GetEngHtml();
                 nodes = new WordNodesGetter(html).GetNodes();
+
             }
+            
 
             if (nodes.Count != 0)
             {
-                // List<Word>.Add(Word)
+                SBook.logic.models.Logger.Add("[" + this.name + "] - Added!\n");
+
                 for (int i = 0; i < nodes.Count; i++)
                 {
                     var w = new Word(this.name);
                     w = new HtmlNodeHelper(nodes[i].InnerHtml).CreateWord(this.name);
                     this.words.Add(w);
                 }
+            }
+            else
+            {
+                SBook.logic.models.Logger.Add("*** The Word is missing [" + name + "].\n");
             }
         }
     }

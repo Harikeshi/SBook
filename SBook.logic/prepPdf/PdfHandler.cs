@@ -1,4 +1,5 @@
 ﻿using IronPdf;
+using SBook.logic.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,14 @@ namespace SBook.logic.prepPdf
 
         public PdfHandler(string path)
         {
+            Logger.Add("Start Loading.\n");
             try
             {
                 this.document = new PdfDocument(path);
             }
             catch (Exception ex)
             {
+                Logger.Add(ex.Message);
                 Console.WriteLine(ex.Message);
             }
         }
